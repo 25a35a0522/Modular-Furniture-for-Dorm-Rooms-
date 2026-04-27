@@ -6,7 +6,7 @@ Modular Furniture for Dorm Rooms is a simple and interactive web application des
 3. Objective
 Students living in dorm rooms often struggle with limited space. This project provides a solution by presenting compact, modular, and multi-functional furniture ideas in an easy-to-use interface.
 
-4.Features
+4.Features-
 🏠 Home page with attractive UI
 🔐 Login validation system
 🛍️ Product showcase (Modular furniture)
