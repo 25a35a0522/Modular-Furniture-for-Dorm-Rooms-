@@ -7,6 +7,7 @@ Modular Furniture for Dorm Rooms is a simple and interactive web application des
 Students living in dorm rooms often struggle with limited space. This project provides a solution by presenting compact, modular, and multi-functional furniture ideas in an easy-to-use interface.
 
 4.Features-
+
 🏠 Home page with attractive UI
 🔐 Login validation system
 🛍️ Product showcase (Modular furniture)
@@ -14,11 +15,13 @@ Students living in dorm rooms often struggle with limited space. This project pr
 📱 Responsive design (basic)
 
 5.Technologies Used
+
 HTML5 – Structure of the web pages
 CSS3 – Styling and layout
 JavaScript – Functionality and interactivity
 
 6.Project Structure
+
 project-folder/
 │
 ├── index.html      # Main HTML file
@@ -27,12 +30,14 @@ project-folder/
 └── README.md       # Project documentation
 
 7.Instalation/setup
+
 a.download or clone the repository.
 b.open the project folder.
 c.Double-click on index.html
 OR open it using any browser
 
 8.Usage of the Project
+
 Navigate using the menu (Home, Products, Feedback)
 Click on Explore button to open Login
 Enter valid email and password
@@ -41,6 +46,7 @@ View different modular furniture designs
 Use the Feedback form to send your message.
 
 9.Sample Output
+
 Home page displays a modern furniture banner
 Login popup validates user input
 Products page shows items like:
@@ -51,6 +57,7 @@ Sofa Cum Bed
 Feedback form shows a success alert
 
 10.Future Improvements
+
 Add backend (Node.js / Firebase) for real authentication
 Store user data in database
 Add detailed product descriptions popup
