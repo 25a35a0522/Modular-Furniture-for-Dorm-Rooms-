@@ -1,0 +1,97 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modular Furniture for Dorm Rooms</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Modular Furniture</h2>
+  <ul>
+    <li><a onclick="showHome()">Home</a></li>
+    <li><a onclick="openProducts()">Products</a></li>
+    <li><a onclick="showPage('feedback')">Feedback</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div>
+    <h1>Smart Modular Furniture for Dorm Rooms</h1>
+    <p>Design | CAD Modelling | Performance Validation</p>
+    <button onclick="openLogin()">Explore</button>
+  </div>
+</section>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <span class="close-btn" onclick="closeLogin()">X</span>
+  <h2>Login</h2>
+
+  <input type="text" id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <div id="error" class="error"></div>
+
+  <button onclick="validateLogin()">Login</button>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products" class="page">
+  <h2>Space Saving Dorm Furniture</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69">
+      <h3>Modular Bed</h3>
+      <p>Storage + comfort</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1616627985621-4c9d4e0b0c7c">
+      <h3>Foldable Study Desk</h3>
+      <p>Wall-mounted space saver</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c">
+      <h3>Storage Shelves</h3>
+      <p>Compact storage unit</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7">
+      <h3>Sofa Cum Bed</h3>
+      <p>Dual-purpose design</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback" class="page">
+  <h2>Feedback</h2>
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <button onclick="alert('Feedback submitted!')">Submit</button>
+</section>
+
+<footer>
+  <p>© 2026 Modular Furniture Project</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
