@@ -1,0 +1,323 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modular Furniture for Dorm Rooms</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  background: #222;
+  color: rgb(153, 50, 50);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+
+nav h2 {
+  color: #00adb5;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: rgb(251, 247, 247);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* HERO (UNCHANGED FROM YOUR ORIGINAL) */
+.hero {
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00adb5;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.hero p {
+  color: black;
+  font-weight: bold;
+}
+
+/* OVERLAY */
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* LOGIN BOX */
+.login-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 1000;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #00adb5;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  padding: 40px;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* FEEDBACK */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Modular Furniture</h2>
+  <ul>
+    <li><a onclick="showHome()">Home</a></li>
+    <li><a onclick="openProducts()">Products</a></li>
+    <li><a onclick="showPage('feedback')">Feedback</a></li>
+  </ul>
+</nav>
+
+<!-- HOME (YOUR ORIGINAL EXACT DESIGN) -->
+<section class="hero" id="home">
+  <div>
+    <h1>Smart Modular Furniture for Dorm Rooms</h1>
+    <p>Design | CAD Modelling | Performance Validation</p>
+    <button onclick="openLogin()">Explore</button>
+  </div>
+</section>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <span class="close-btn" onclick="closeLogin()">X</span>
+  <h2>Login</h2>
+
+  <input type="text" id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <div id="error" class="error"></div>
+
+  <button onclick="validateLogin()">Login</button>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products" class="page">
+  <h2>Space Saving Dorm Furniture</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69">
+      <h3>Modular Bed</h3>
+      <p>Storage + comfort</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1616627985621-4c9d4e0b0c7c">
+      <h3>Foldable Study Desk</h3>
+      <p>Wall-mounted space saver</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c">
+      <h3>Storage Shelves</h3>
+      <p>Compact storage unit</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7">
+      <h3>Sofa Cum Bed</h3>
+      <p>Dual-purpose design</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback" class="page">
+  <h2>Feedback</h2>
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <button onclick="alert('Feedback submitted!')">Submit</button>
+</section>
+
+<footer>
+  <p>© 2026 Modular Furniture Project</p>
+</footer>
+
+<script>
+let isLoggedIn = false;
+
+function showHome(){
+  document.getElementById("home").style.display = "flex";
+  document.getElementById("products").style.display = "none";
+  document.getElementById("feedback").style.display = "none";
+}
+
+function showPage(pageId){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("products").style.display = "none";
+  document.getElementById("feedback").style.display = "none";
+  document.getElementById(pageId).style.display = "block";
+}
+
+function openLogin(){
+  document.getElementById("loginBox").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+function closeLogin(){
+  document.getElementById("loginBox").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+function validateLogin(){
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let error = document.getElementById("error");
+
+  let emailPattern = /^[A-Za-z]+@gmail\.com$/;
+  let passwordPattern = /^[A-Za-z]+$/;
+
+  if(!emailPattern.test(email)){
+    error.innerText = "Invalid Email!";
+    return;
+  }
+
+  if(!passwordPattern.test(password)){
+    error.innerText = "Password only alphabets!";
+    return;
+  }
+
+  isLoggedIn = true;
+  closeLogin();
+  showPage("products");
+}
+
+function openProducts(){
+  if(!isLoggedIn){
+    openLogin();
+  } else {
+    showPage("products");
+  }
+}
+</script>
+
+</body>
+</html>
